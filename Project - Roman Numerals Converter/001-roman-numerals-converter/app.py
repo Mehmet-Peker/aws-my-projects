@@ -14,17 +14,17 @@ def converter(number):
 
 @app.route('/')
 def home():
-    return render_template('index.html',developer_name='Developer_Name',not_valid=False,today=str(datetime.date.today()))    
+    return render_template('index.html',developer_name='Peker',not_valid=False,today=str(datetime.date.today()))    
 
 @app.route('/',methods=['POST','GET'])
 def resultpage():
     if request.method=='POST':
         number=request.form['number']
         if  not number.isdigit():
-            return render_template('index.html',developer_name='Developer_name',not_valid=True) 
+            return render_template('index.html',developer_name='Peker',not_valid=True) 
         if  int(number)< 1 or int(number) > 3999:
-            return render_template('index.html',developer_name='Developer_name',not_valid=True)    
-        return render_template('result.html',number_decimal=request.form['number'],number_roman=converter(number),developer_name='Developer_name',not_valid=False)
+            return render_template('index.html',developer_name='Peker',not_valid=True)    
+        return render_template('result.html',number_decimal=request.form['number'],number_roman=converter(number),developer_name='Peker',not_valid=False)
 
 if __name__ == '__main__':
 #     app.run(debug=True)
